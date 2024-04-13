@@ -1,0 +1,27 @@
+.container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #dcbebe;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+button {
+    border: 2px solid black;
+    width: 103px;
+}
+
+.bgchanger {
+    width: 100vw;
+    border: 2px solid black;
+    height: 100vh;
+}
