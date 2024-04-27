@@ -1,8 +1,16 @@
+import Header from "./components/Header";
+import Input from "./components/Input";
+import TodoItem from "./components/TodoItem";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+
 function App() {
   return (
-    <div className="App">
-      <h1>todo</h1>
-    </div>
+    <Provider store={store}>
+      <Header />
+      <Input />
+      <TodoItem />
+    </Provider>
   );
 }
 
