@@ -16,24 +16,24 @@ function Header() {
       {/* List Items */}
       <div>
         <ul className="flex">
-          <img className="w-[30px] mr-[12px]" src={Search} alt="Search-icon" />
-          <li className="mr-[90px] cursor-pointer hover:text-orange-700  font-bold mt-[3px]">
+          <img className="w-[26px] mr-[12px]" src={Search} alt="Search-icon" />
+          <li className="mr-[90px] cursor-pointer hover:text-orange-700  font-bold ">
             Search
           </li>
-          <img className="w-[30px] mr-[12px]" src={Offer} alt="Offer-icon" />
-          <li className="mr-[90px] cursor-pointer hover:text-orange-700  font-bold mt-[3px]">
+          <img className="w-[26px] mr-[12px]" src={Offer} alt="Offer-icon" />
+          <li className="mr-[90px] cursor-pointer hover:text-orange-700  font-bold ">
             Offers
           </li>
-          <img className="w-[30px] mr-[12px]" src={Help} alt="Help-icon" />
-          <li className="mr-[90px] cursor-pointer hover:text-orange-700 font-bold mt-[3px]">
+          <img className="w-[26px] mr-[12px]" src={Help} alt="Help-icon" />
+          <li className="mr-[90px] cursor-pointer hover:text-orange-700 font-bold ">
             Help
           </li>
-          <img className="w-[30px] mr-[12px]" src={Sigin} alt="Signin-icon" />
-          <li className="mr-[90px] cursor-pointer hover:text-orange-700 font-bold mt-[3px]">
+          <img className="w-[26px] mr-[12px]" src={Sigin} alt="Signin-icon" />
+          <li className="mr-[90px] cursor-pointer hover:text-orange-700 font-bold ">
             SignIn
           </li>
-          <img className="w-[30px] mr-[12px]" src={Cart} alt="Cart-icon" />
-          <li className="mr-[90px] cursor-pointer hover:text-orange-700 font-bold mt-[3px]">
+          <img className="w-[26px] mr-[12px]" src={Cart} alt="Cart-icon" />
+          <li className="mr-[90px] cursor-pointer hover:text-orange-700 font-bold ">
             Cart
           </li>
         </ul>
