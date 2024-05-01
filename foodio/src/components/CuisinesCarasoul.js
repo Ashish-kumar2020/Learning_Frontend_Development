@@ -7,7 +7,7 @@ function CuisinesCarasoul() {
   const headingCarousal = apiData?.data?.cards[0]?.card?.card?.header?.title;
   const carousalData =
     apiData?.data?.cards[0]?.card?.card?.imageGridCards?.info;
-  console.log(carousalData);
+
   const baseUrl =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_144,h_180/";
 
@@ -28,7 +28,7 @@ function CuisinesCarasoul() {
   return (
     <div className="mt-[20px]">
       <div className="flex justify-around">
-        <h2 className="text-2xl">{headingCarousal}</h2>
+        <h2 className="text-2xl mr-[720px]">{headingCarousal}</h2>
         <div>
           <button onClick={handlePrevImage}>
             {" "}
@@ -73,6 +73,7 @@ function CuisinesCarasoul() {
             );
           })}
       </div>
+      <hr className="w-[870px] ml-[270px] mt-[60px]" />
     </div>
   );
 }
