@@ -48,7 +48,7 @@ function RestaurantChain() {
           </button>
         </div>
       </div>
-      <div className="carousel flex justify-center">
+      <div className="carousel flex justify-center mt-[30px]">
         {chainData &&
           chainData
             .slice(currentIndex, currentIndex + 4)

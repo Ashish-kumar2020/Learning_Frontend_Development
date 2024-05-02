@@ -26,7 +26,7 @@ function CuisinesCarasoul() {
   };
 
   return (
-    <div className="mt-[20px]">
+    <div className="mt-[20px] ">
       <div className="flex justify-around">
         <h2 className="text-2xl mr-[720px]">{headingCarousal}</h2>
         <div>
@@ -61,7 +61,7 @@ function CuisinesCarasoul() {
               <img
                 className={`carousel-image ${
                   isFirstVisible || isLastVisible ? "visible" : "hidden"
-                }`}
+                } cursor-pointer`}
                 key={ele.id}
                 src={`${baseUrl}${ele.imageId}`}
                 alt={ele.accessibility.altText}
