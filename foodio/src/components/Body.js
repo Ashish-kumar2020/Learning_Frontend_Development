@@ -1,6 +1,6 @@
 import useSwiggyApi from "../Hooks/useSwiggyApi";
 import RestaurantCard from "./RestaurantCard";
-
+import { Link } from "react-router-dom";
 function Body() {
   const apiData = useSwiggyApi();
   const resMenu =
@@ -14,7 +14,9 @@ function Body() {
         {resMenu &&
           resMenu.map((ele, index) => (
             <div key={ele.info.id} className="w-1/4 px-2 mb-[30px]">
-              <RestaurantCard resData={ele.info} />
+              <Link key={ele.info.id} to={"/restaurantMenu/" + ele.info.id}>
+                <RestaurantCard resData={ele.info} />
+              </Link>
             </div>
           ))}
       </div>
