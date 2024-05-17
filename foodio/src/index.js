@@ -11,9 +11,7 @@ import Cart from "./components/Pages/Cart";
 import Auth from "./components/Pages/Auth";
 import RestaurantChain from "./components/RestaurantChain";
 import Body from "./components/Body";
-import BestPlace from "./components/BestPlace";
-import Cusines from "./components/Cusines";
-import Explore from "./components/Explore";
+
 import CuisnesCarousal from "./components/CuisinesCarasoul";
 import RestaurantMenu from "./components/RestaurantMenu";
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -31,9 +29,6 @@ const router = createBrowserRouter([
             <CuisnesCarousal />
             <RestaurantChain />
             <Body />
-            <BestPlace />
-            <Cusines />
-            <Explore />
           </>
         ),
       },
