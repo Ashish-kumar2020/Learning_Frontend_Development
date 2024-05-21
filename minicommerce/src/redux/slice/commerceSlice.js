@@ -14,13 +14,13 @@ const ecommerceSlice = createSlice({
 
   initialState: {
     isLoading: false,
-    products: null,
+    products: [],
   },
   //   using builder we can listen changes of fetchProducts
   //   we can handle all the three case in builder: pending,fullfilled,rejected
 
   extraReducers: (builder) => {
-    builder.addCase(fetchProducts.pending, (state, action) => {
+    builder.addCase(fetchProducts.pending, (state) => {
       state.isLoading = true;
     });
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
