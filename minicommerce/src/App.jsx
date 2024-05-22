@@ -4,17 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "./redux/slice/commerceSlice";
 import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
+import Cart from "./components/Cart";
 
 function App() {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
+  const state = useSelector((state) => state.products);
   const isLoading = useSelector((state) => state.isLoading);
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
-
-  console.log("Products:", state.products);
 
   return (
     <>
@@ -36,6 +35,7 @@ function App() {
           </div>
         )}
       </div>
+      <Cart />
     </>
   );
 }
