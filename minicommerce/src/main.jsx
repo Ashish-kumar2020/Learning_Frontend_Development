@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -9,6 +8,8 @@ import Body from "./components/Body.jsx";
 import Login from "./components/Login.jsx";
 import Cart from "./components/Cart.jsx";
 import About from "./components/About.jsx";
+import { Auth0Provider } from "@auth0/auth0-react";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,9 +40,15 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <Auth0Provider
+    domain="dev-3q3jkk2s11kfqfd7.us.auth0.com"
+    clientId="z30HolGWBe7bykg08sWVLYINYTXrSksx"
+    authorizationParams={{
+      redirect_uri: window.location.origin,
+    }}
+  >
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
-  </React.StrictMode>
+  </Auth0Provider>
 );
