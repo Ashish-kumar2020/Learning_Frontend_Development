@@ -18,7 +18,14 @@ function Header() {
             <Link to="/">
               <li className="hover:underline">Home</li>
             </Link>
-            <li>{isAuthenticated && <h2>{user.name}</h2>}</li>
+
+            <Link to="/about">
+              <li className="hover:underline">About</li>
+            </Link>
+            <Link to="/cart">
+              <li className="hover:underline">Cart</li>
+            </Link>
+
             {isAuthenticated ? (
               <button
                 onClick={() =>
@@ -35,13 +42,7 @@ function Header() {
                 Log In
               </button>
             )}
-
-            <Link to="/about">
-              <li className="hover:underline">About</li>
-            </Link>
-            <Link to="/cart">
-              <li className="hover:underline">Cart</li>
-            </Link>
+            <li>{isAuthenticated && <h2>{user.name}</h2>}</li>
           </ul>
         </nav>
       </div>

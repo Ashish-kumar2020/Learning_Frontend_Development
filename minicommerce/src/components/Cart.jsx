@@ -11,7 +11,7 @@ function Cart() {
         <div className="flex flex-wrap justify-center">
           {cartItems.map((product) => (
             <div key={product.id} className="m-2">
-              <ProductCard product={product} />
+              <ProductCard product={product} isCartPage={true} />
             </div>
           ))}
         </div>

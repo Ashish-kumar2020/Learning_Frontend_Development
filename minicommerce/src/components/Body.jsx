@@ -20,7 +20,11 @@ const Body = () => {
           {state.products && state.products.length > 0 ? (
             <div className="flex flex-wrap justify-center">
               {state.products.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  isCartPage={false}
+                />
               ))}
             </div>
           ) : (
