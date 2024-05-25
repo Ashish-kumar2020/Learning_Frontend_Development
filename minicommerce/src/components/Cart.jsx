@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import ProductCard from "./ProductCard";
 
 function Cart() {
   const cartItems = useSelector((state) => state.cart);
@@ -7,13 +8,13 @@ function Cart() {
     <div>
       <h2>Cart</h2>
       {cartItems.length > 0 ? (
-        <ul>
-          {cartItems.map((item) => (
-            <li key={item.id}>
-              {item.title} - Quantity: {item.quantity}
-            </li>
+        <div className="flex flex-wrap justify-center">
+          {cartItems.map((product) => (
+            <div key={product.id} className="m-2">
+              <ProductCard product={product} />
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>No items in cart</p>
       )}

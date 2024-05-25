@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../redux/slice/cartSlice";
 
 function ProductCard(product) {
-  const { title, price, discountPercentage, thumbnail, rating, stock, id } =
+  const { title, price, discountPercentage, thumbnail, rating, id } =
     product.product;
 
   const originalPrice = (price / (1 - discountPercentage / 100)).toFixed(2);
@@ -18,7 +18,7 @@ function ProductCard(product) {
         discountPercentage,
         thumbnail,
         rating,
-        stock,
+
         originalPrice,
       })
     );
@@ -26,17 +26,14 @@ function ProductCard(product) {
 
   return (
     <div className="relative m-10 flex w-full  max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
-      <a
-        className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
-        href="#"
-      >
+      <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl">
         <img className="object-cover" src={thumbnail} alt="product image" />
         <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
           {discountPercentage}% OFF
         </span>
       </a>
       <div className="mt-4 px-5 pb-5">
-        <a href="#">
+        <a>
           <h5 className="text-xl tracking-tight text-slate-900">{title}</h5>
         </a>
         <div className="mt-2 mb-5 flex items-center justify-between">
@@ -51,17 +48,9 @@ function ProductCard(product) {
               {rating}
             </span>
           </div>
-
-          <div className="flex items-center">
-            <button>-</button>
-            <span className="mr-2 ml-3 rounded bg-white px-2.5 py-0.5 text-xs font-semibold">
-              {stock}
-            </span>
-            <button>+</button>
-          </div>
         </div>
-        <div className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
-          <button onClick={addCartItems}>
+        <button onClick={addCartItems} className="w-[280px]">
+          <div className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="mr-2 h-6 w-6"
@@ -77,8 +66,8 @@ function ProductCard(product) {
               />
             </svg>
             Add to cart
-          </button>
-        </div>
+          </div>
+        </button>
       </div>
     </div>
   );
