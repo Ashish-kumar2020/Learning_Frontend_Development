@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <header className="bg-gray-800 text-white">
       <div className="container mx-auto flex items-center justify-between p-4">
-        <div className="text-2xl font-bold hover: cursor-pointer">
-          ShopifySquare
-        </div>
+        <Link to="/">
+          <div className="text-2xl font-bold hover: cursor-pointer">
+            ShopifySquare
+          </div>
+        </Link>
         <div className="flex-grow mx-40">
           <input
             type="text"
@@ -14,18 +17,18 @@ function Header() {
         </div>
         <nav>
           <ul className="flex space-x-20">
-            <li className="hover:underline">
-              <a href="#home">Home</a>
-            </li>
-            <li className="hover:underline">
-              <a href="#login">Login</a>
-            </li>
-            <li className="hover:underline">
-              <a href="#about">About</a>
-            </li>
-            <li className="hover:underline">
-              <a href="#cart">Cart</a>
-            </li>
+            <Link to="/">
+              <li className="hover:underline">Home</li>
+            </Link>
+            <Link to="/login">
+              <li className="hover:underline">Login</li>
+            </Link>
+            <Link to="/about">
+              <li className="hover:underline">About</li>
+            </Link>
+            <Link to="/cart">
+              <li className="hover:underline">Cart</li>
+            </Link>
           </ul>
         </nav>
       </div>
