@@ -1,0 +1,92 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Alice Smith",
+            "email": "alice.smith@example.com",
+            "isActive": true,
+            "age": 28,
+            "address": {
+                "street": "123 Maple Street",
+                "city": "Springfield",
+                "state": "IL",
+                "postalCode": "62701"
+            },
+            "phoneNumbers": [
+                {
+                    "type": "home",
+                    "number": "555-1234"
+                },
+                {
+                    "type": "mobile",
+                    "number": "555-5678"
+                }
+            ],
+            "roles": [
+                "admin",
+                "editor"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Bob Johnson",
+            "email": "bob.johnson@example.com",
+            "isActive": false,
+            "age": 35,
+            "address": {
+                "street": "456 Oak Avenue",
+                "city": "Metropolis",
+                "state": "NY",
+                "postalCode": "10001"
+            },
+            "phoneNumbers": [
+                {
+                    "type": "work",
+                    "number": "555-8765"
+                }
+            ],
+            "roles": [
+                "viewer"
+            ]
+        }
+    ],
+    "products": [
+        {
+            "id": 101,
+            "name": "Laptop",
+            "price": 899.99,
+            "category": "Electronics",
+            "stock": 25
+        },
+        {
+            "id": 102,
+            "name": "Desk Chair",
+            "price": 199.99,
+            "category": "Furniture",
+            "stock": 50
+        }
+    ],
+    "orders": [
+        {
+            "orderId": 1001,
+            "userId": 1,
+            "productIds": [
+                101,
+                102
+            ],
+            "total": 1099.98,
+            "status": "shipped",
+            "orderDate": "2023-06-01T10:00:00Z"
+        },
+        {
+            "orderId": 1002,
+            "userId": 2,
+            "productIds": [
+                102
+            ],
+            "total": 199.99,
+            "status": "pending",
+            "orderDate": "2023-06-02T11:30:00Z"
+        }
+    ]
+}
