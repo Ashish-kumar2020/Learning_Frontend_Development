@@ -55,3 +55,68 @@ li:hover {
 hr {
     border: .5px solid #ede3e3;
 }
+
+/* Landing Page */
+
+.landingbody {
+    margin-top: 50px;
+}
+
+.landing-container {
+    display: flex;
+    justify-content: center;
+}
+
+.landingimg {
+    max-height: 40vh;
+    margin-bottom: 60px;
+}
+
+.investHeading {
+    font-size: 2.75rem;
+    line-height: 1.25;
+    font-weight: 500;
+    margin: .67em 0;
+    color: #424242;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+}
+
+.investDetails {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #424242;
+    line-height: 0.7;
+    font-family: "Inter", sans-serif;
+}
+
+.signupcontainer {
+    display: flex;
+    justify-content: center;
+}
+
+.signupbtn {
+    margin-top: 25px;
+    background-color: #387ed1;
+    color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0) !important;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.signupbtn:hover {
+    background-color: black
+}
