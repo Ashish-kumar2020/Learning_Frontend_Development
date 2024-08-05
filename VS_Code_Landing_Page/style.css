@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background-color: rgb(14, 14, 14);
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+.leftUl {
+    display: flex;
+    list-style: none;
+    width: 1000px;
+    align-items: center;
+}
+
+.logo {
+    height: 24px;
+    position: relative;
+    top: 3px;
+    cursor: pointer;
+}
+
+
+.logoName {
+    position: relative;
+    top: -4px;
+    left: 7px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.rightUl {
+    display: flex;
+    list-style: none;
+    position: relative;
+    right: 60px;
+}
+
+li {
+    margin-right: 27px;
+
+}
+
+.companylists {
+    color: #9d9d9d;
+}
+
+.companylists:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* Right Side */
+
+.searchBar {
+    border: 2px solid rgb(50, 50, 50);
+    background-color: rgb(14, 14, 14);
+    border-radius: 4px;
+    color: rgb(50, 50, 50);
+    width: 200px;
+    height: 32px;
+    padding-left: 12px;
+    font-size: 16px;
+}
+
+.downloadBtn {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: rgb(51, 118, 205);
+    border: none;
+    cursor: pointer;
+}
