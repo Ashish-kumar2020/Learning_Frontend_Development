@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logocontainer {
+    margin-left: 80px;
+    font-family: "Poppins", system-ui;
+}
+
+.logotext {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.addtodocontainer {
+    margin-right: 80px;
+    font-family: "Poppins", system-ui;
+}
+
+button {
+    font-family: "Poppins", system-ui;
+    cursor: pointer;
+}

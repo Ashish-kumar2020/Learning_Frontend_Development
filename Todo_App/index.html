@@ -5,8 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo - List</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="body.css" />
   </head>
   <body>
+    <!-- Navbar -->
+    <div class="header">
+      <div class="logocontainer">
+        <h3 class="logotext">todo</h3>
+      </div>
+      <div class="addtodocontainer">
+        <button>Add Todo</button>
+      </div>
+    </div>
+
+    <!-- Body Container with 2 sides : left side with tags and right side with todos display -->
+
+    <div class="bodyconatiner">
+      <div class="tagscontainer">
+        <!-- There will be four categories  -->
+        <div class="work">
+          <div class="workicon"></div>
+          <h2 class="worktext">work</h2>
+        </div>
+        <div class="study work">
+          <div class="studyicon workicon"></div>
+          <h2 class="worktext">study</h2>
+        </div>
+        <div class="entertainment work">
+          <div class="enticon workicon"></div>
+          <h2 class="worktext">entertainment</h2>
+        </div>
+        <div class="work family">
+          <div class="familyicon workicon"></div>
+          <h2 class="worktext">family</h2>
+        </div>
+      </div>
+      <div class="todosdisplaycontainer"></div>
+    </div>
+
     <script src="./index.js"></script>
   </body>
 </html>
