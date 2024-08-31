@@ -26,7 +26,7 @@ button {
 
 .modal {
     display: none;
-
+    border-radius: 12pxs;
     position: fixed;
 
     z-index: 1;
@@ -50,7 +50,7 @@ button {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    height: 80%;
+    height: 60%;
 }
 
 .close {
@@ -65,4 +65,57 @@ button {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.todoTitle {
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+
+}
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+}
+
+.todotitleinput {
+    width: 780px;
+    padding: 7px;
+    margin-left: 100px;
+    border-radius: 11px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Poppins", system-ui;
+    border: 1px solid black;
+}
+
+.descriptioncontainer {
+    display: flex;
+    align-items: center;
+}
+
+.todoDescriptionInput {
+    width: 780px;
+    padding: 7px;
+    margin-left: 36px;
+    border-radius: 11px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Poppins", system-ui;
+
+}
+
+.SubmitBtn {
+    width: 800px;
+    margin-left: 240px;
+    margin-top: 22px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px;
+    background-color: skyblue;
+}
+
+.SubmitBtn:hover {
+    border: 1px solid black;
+    font-size: 16px;
 }
