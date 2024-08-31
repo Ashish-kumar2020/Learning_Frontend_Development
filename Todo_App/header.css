@@ -19,9 +19,22 @@
     font-family: "Poppins", system-ui;
 }
 
+#openModalBtn {
+    width: 120px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background-color: lightgreen;
+}
+
 button {
     font-family: "Poppins", system-ui;
     cursor: pointer;
+}
+
+button:hover {
+    font-size: 16px;
+    border: 1px solid black;
 }
 
 .modal {
