@@ -22,9 +22,7 @@ async function signInUser(e) {
       body: JSON.stringify(userSigninData),
     });
 
-    if (!validateUser.ok) {
-      throw new Error("Network response was not ok");
-    } else {
+    if (validateUser.ok) {
       email.value = "";
       password.value = "";
     }
@@ -32,6 +30,8 @@ async function signInUser(e) {
     const response = await validateUser.json();
     console.log(response.token);
     localStorage.setItem("token", response.token);
+
+    window.location.href = "index.html";
   } catch (e) {
     console.error("There was a problem with signup the user :", error);
   }

@@ -92,6 +92,7 @@ button {
 
 hr {
     width: 410px;
+    margin: 4px;
 }
 
 .tododescription {
@@ -107,4 +108,12 @@ hr {
     padding-right: 12px;
     overflow-y: scroll;
     height: 190px;
+}
+
+.todoeditdelete {
+    width: 70px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background-color: lightgreen;
 }

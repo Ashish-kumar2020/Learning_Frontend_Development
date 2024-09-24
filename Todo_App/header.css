@@ -127,8 +127,3 @@ button:hover {
     border: 1px;
     background-color: skyblue;
 }
-
-.SubmitBtn:hover {
-    border: 1px solid black;
-    font-size: 16px;
-}
