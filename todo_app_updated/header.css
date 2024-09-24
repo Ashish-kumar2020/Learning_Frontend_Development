@@ -1,0 +1,130 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logocontainer {
+    margin-left: 80px;
+    font-family: "Poppins", system-ui;
+}
+
+.logotext {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.addtodocontainer {
+    margin-right: 80px;
+    font-family: "Poppins", system-ui;
+}
+
+#openModalBtn {
+    width: 120px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background-color: lightgreen;
+}
+
+button {
+    font-family: "Poppins", system-ui;
+    cursor: pointer;
+}
+
+
+.modal {
+    display: none;
+    border-radius: 12pxs;
+    position: fixed;
+
+    z-index: 1;
+
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    height: 100%;
+
+    overflow: auto;
+
+    background-color: rgb(0, 0, 0);
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 60%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.todoTitle {
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+
+}
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+}
+
+.todotitleinput {
+    width: 780px;
+    padding: 7px;
+    margin-left: 100px;
+    border-radius: 11px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Poppins", system-ui;
+    border: 1px solid black;
+}
+
+.descriptioncontainer {
+    display: flex;
+    align-items: center;
+}
+
+.todoDescriptionInput {
+    width: 780px;
+    padding: 7px;
+    margin-left: 36px;
+    border-radius: 11px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Poppins", system-ui;
+
+}
+
+.SubmitBtn {
+    width: 800px;
+    margin-left: 240px;
+    margin-top: 22px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px;
+    background-color: skyblue;
+}
+
+.SubmitBtn:hover {
+    border: 1px solid black;
+    font-size: 16px;
+}

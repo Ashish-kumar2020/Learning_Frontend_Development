@@ -1,0 +1,110 @@
+.bodyconatiner {
+    display: flex;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 20px;
+    height: auto;
+}
+
+.tagscontainer {
+
+    width: 260px;
+    height: 500px;
+}
+
+.work {
+    display: flex;
+    align-items: center;
+
+}
+
+.workicon {
+    background-color: #c7c7f2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-top: 27px;
+    margin-left: 27px;
+    margin-right: 17px;
+}
+
+.worktext {
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.studyicon {
+    background-color: skyblue;
+}
+
+.enticon {
+    background-color: pink;
+}
+
+.familyicon {
+    background-color: darkseagreen;
+}
+
+.todosdisplaycontainer {
+    width: 1134px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.todocard {
+    border-radius: 10px;
+    margin: 12px;
+    width: 450px;
+    height: auto;
+    background-color: beige;
+
+}
+
+.todocardtobar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+    overflow-x: auto;
+    font-size: 16px;
+    padding-left: 12px;
+
+}
+
+
+.menuBtn {
+    padding-right: 12px;
+}
+
+button {
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+}
+
+hr {
+    width: 410px;
+}
+
+.tododescription {
+    height: 200px;
+}
+
+.description {
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+    overflow-x: auto;
+    font-size: 16px;
+    padding-left: 12px;
+    padding-right: 12px;
+    overflow-y: scroll;
+    height: 190px;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo - List</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="body.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="header">
+      <div class="logocontainer">
+        <h3 class="logotext">todo</h3>
+      </div>
+      <div class="addtodocontainer">
+        <button id="openModalBtn">Add Todo</button>
+      </div>
+    </div>
+
+    <!-- Modal COntent -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <!-- Todo Title Conatiner -->
+          <div class="titleContainer">
+            <h3 class="todoTitle">Add Todo Title : </h3>
+            <input type="text" placeholder="Add Todo Title Here.." class="todotitleinput" id="titleinput" value="">
+          </div>
+
+          <!-- Todo Description Container -->
+          <div class="descriptioncontainer">
+            <h3 class="todoTitle">Add Description Here : </h3>
+            
+            <textarea name="description" id="descriptionInput" cols="30" rows="10" class="todoDescriptionInput" placeholder="Enter Todo Description Here..."></textarea>
+
+          </div>
+          <button class="SubmitBtn" id="submitTodo">Submit Todo</button>
+      </div>
+
+    </div>
+
+
+    <!-- Body Container with 2 sides : left side with tags and right side with todos display -->
+
+    <div class="bodyconatiner">
+      <!-- Tags Container -->
+
+      <div class="tagscontainer">
+        <!-- There will be four categories  -->
+        <div class="work">
+          <div class="workicon"></div>
+          <h2 class="worktext">work</h2>
+        </div>
+        <div class="study work">
+          <div class="studyicon workicon"></div>
+          <h2 class="worktext">study</h2>
+        </div>
+        <div class="entertainment work">
+          <div class="enticon workicon"></div>
+          <h2 class="worktext">entertainment</h2>
+        </div>
+        <div class="work family">
+          <div class="familyicon workicon"></div>
+          <h2 class="worktext">family</h2>
+        </div>
+      </div>
+
+      <!-- TodosContainer  -->
+      <div class="todosdisplaycontainer">
+        <div class="todocard">
+          <div class="todocardtobar">
+            <h2 class="title">Lorem, ipsum</h2>
+            <div class="menuBtn">
+              <button id="openModalBtn">Edit</button>
+            </div>
+          </div>
+          <hr />
+          <!-- Todo Description Conatiner -->
+          <div class="tododescription">
+            <h2 class="description">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga
+              expedita sunt illum, voluptatibus illo fugiat asperiores natus
+              voluptas soluta. Quos et inventore illo ratione perferendis
+              similique officiis libero eius accusantium! Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Id, officiis exercitationem
+              saepe debitis laudantium voluptatem reprehenderit, quo ullam
+              aliquid, fugit facilis blanditiis! Deleniti tempore id non illo
+              reiciendis. Vitae quasi doloribus similique enim necessitatibus
+              molestiae eum deleniti aspernatur explicabo deserunt.
+            </h2>
+          </div>
+        </div>
+       
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
