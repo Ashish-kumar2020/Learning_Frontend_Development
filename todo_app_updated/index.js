@@ -65,6 +65,7 @@ function displayAllTodos(todo) {
     todosDisplayContainer.appendChild(todoCard);
     const deleteBtn = todoCard.querySelector(".deleteBtn");
     const doneBtn = todoCard.querySelector(".doneBtn");
+    const editBtn = todoCard.querySelector(".editBtn");
     if (todo.done) {
       todoCard.querySelector(".title").style.textDecoration = "line-through";
       todoCard.querySelector(".description").style.textDecoration =
@@ -72,19 +73,45 @@ function displayAllTodos(todo) {
       doneBtn.disabled = true;
     }
     deleteBtn.addEventListener("click", () => deleteTodo(todo._id));
-    doneBtn.addEventListener("click", () => markDoneTodo(todo._id));
+    doneBtn.addEventListener("click", () => markDoneTodo(todo._id, true));
+    editBtn.addEventListener("click", () =>
+      editTodos(todo._id, todo.userId, todo.description)
+    );
   });
+}
+// Edit todo
+async function editTodos(todoId, userId, currentDescription) {
+  const description = prompt("Edit Current description :", currentDescription);
+  if (description !== null) {
+    const edit = await fetch("http://localhost:4005/updatetodo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+      body: JSON.stringify({
+        todoId: todoId,
+        description: description,
+        userId: userId,
+      }),
+    });
+
+    if (edit.ok) {
+      await markDoneTodo(todoId, false);
+      await fetchAllTodos();
+    }
+  }
 }
 
 // Mark done todo
-async function markDoneTodo(todoId) {
+async function markDoneTodo(todoId, done = true) {
   const taskComplete = await fetch("http://localhost:4005/markdone", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       token: token,
     },
-    body: JSON.stringify({ todoId: todoId, done: true }),
+    body: JSON.stringify({ todoId: todoId, done: done }),
   });
 
   if (taskComplete.ok) {
