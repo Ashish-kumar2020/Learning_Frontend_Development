@@ -117,3 +117,9 @@ hr {
     border: none;
     background-color: lightgreen;
 }
+
+.strikethrough {
+    text-decoration: line-through;
+    color: grey;
+
+}

@@ -16,6 +16,9 @@ closeModal.onclick = function () {
 
 const token = localStorage.getItem("token");
 console.log(token);
+
+// Fetch all todos on Window load
+
 async function fetchAllTodos() {
   const API_URL = "http://localhost:4005/fetchtodos";
 
@@ -36,6 +39,8 @@ async function fetchAllTodos() {
   }
 }
 
+// Display all the todos
+
 function displayAllTodos(todo) {
   todosDisplayContainer.innerHTML = "";
   todo.forEach((todo) => {
@@ -45,9 +50,9 @@ function displayAllTodos(todo) {
     <div class="todocardtobar">
         <h2 class="title">${todo.title}</h2>
         <div class="menuBtn">
-          <button class="todoeditdelete">Edit</button>
-          <button class="todoeditdelete">Delete</button>
-          <button class="todoeditdelete">Donw</button>
+          <button class="todoeditdelete editBtn" >Edit</button>
+          <button class="todoeditdelete deleteBtn" >Delete</button>
+          <button class="todoeditdelete doneBtn" >Done</button>
         </div>
       </div>
       <hr />
@@ -58,9 +63,51 @@ function displayAllTodos(todo) {
       </div>
       `;
     todosDisplayContainer.appendChild(todoCard);
+    const deleteBtn = todoCard.querySelector(".deleteBtn");
+    const doneBtn = todoCard.querySelector(".doneBtn");
+    if (todo.done) {
+      todoCard.querySelector(".title").style.textDecoration = "line-through";
+      todoCard.querySelector(".description").style.textDecoration =
+        "line-through";
+      doneBtn.disabled = true;
+    }
+    deleteBtn.addEventListener("click", () => deleteTodo(todo._id));
+    doneBtn.addEventListener("click", () => markDoneTodo(todo._id));
   });
 }
 
+// Mark done todo
+async function markDoneTodo(todoId) {
+  const taskComplete = await fetch("http://localhost:4005/markdone", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      token: token,
+    },
+    body: JSON.stringify({ todoId: todoId, done: true }),
+  });
+
+  if (taskComplete.ok) {
+    fetchAllTodos();
+  }
+}
+// Delete todo
+async function deleteTodo(todoId) {
+  const removeTodo = await fetch("http://localhost:4005/deletodo", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      token: token,
+    },
+    body: JSON.stringify({ todoId: todoId }),
+  });
+  // const response = await removeTodo.json();
+  if (removeTodo.ok) {
+    fetchAllTodos();
+  }
+}
+
+// Add new Todo
 async function addNewTodo() {
   const title = titleinput.value;
   const description = descriptionInput.value;
@@ -82,9 +129,16 @@ async function addNewTodo() {
     });
     const response = await addTodo.json();
     console.log(response);
+    if (addTodo.ok) {
+      titleinput.value = "";
+      descriptionInput.value = "";
+      modal.style.display = "none";
+      fetchAllTodos();
+    }
   } catch (e) {
     console.error("There was a problem with signup the user :", error);
   }
 }
+
 document.addEventListener("DOMContentLoaded", fetchAllTodos);
 submitTodo.addEventListener("click", addNewTodo);
