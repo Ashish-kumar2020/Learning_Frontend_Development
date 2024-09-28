@@ -1,14 +1,64 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import Notification from "./Notification";
 
 const Login = () => {
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const [isNotification, setIsNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState("");
+
+  const handleLoginRequest = async (e) => {
+    e.preventDefault();
+
+    try {
+      const userDetails = {
+        email: userEmail,
+        password: userPassword,
+      };
+
+      const validateUser = await axios.post(
+        "http://localhost:4005/signin",
+        userDetails
+      );
+      console.log(validateUser.data);
+
+      if (validateUser.data.status !== 200) {
+        console.log("Problem in signing the user");
+        setIsNotification(true);
+        setNotificationMessage("Problem in signing the user");
+      } else {
+        setUserEmail("");
+        setUserPassword("");
+        setIsNotification(true);
+        setNotificationMessage(validateUser.data.message);
+      }
+    } catch (error) {
+      console.log("Error :", error);
+    }
+  };
+
+  useEffect(() => {
+    const removeNotificationBar = setTimeout(() => {
+      setIsNotification(false);
+    }, 4000);
+
+    return () => {
+      clearTimeout(removeNotificationBar);
+    };
+  });
   return (
     <div className="bg-black min-h-screen flex flex-col items-center">
       {/* Header */}
       <Header />
-
+      {isNotification && (
+        <div className="absolute top-0 right-0 p-4">
+          <Notification message={notificationMessage} />
+        </div>
+      )}
       {/* Main content */}
       <main className="flex-grow w-full max-w-md mx-auto bg-black text-white px-8 py-10">
         <div className="signin-container">
@@ -19,6 +69,10 @@ const Login = () => {
                 type="email"
                 placeholder="Email or phone number"
                 className="w-full p-3 bg-gray-800 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                value={userEmail}
+                onChange={(e) => {
+                  setUserEmail(e.target.value);
+                }}
                 required
               />
             </div>
@@ -27,12 +81,17 @@ const Login = () => {
                 type="password"
                 placeholder="Password"
                 className="w-full p-3 bg-gray-800 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                value={userPassword}
+                onChange={(e) => {
+                  setUserPassword(e.target.value);
+                }}
                 required
               />
             </div>
             <button
               type="submit"
               className="w-full p-3 bg-red-600 rounded font-semibold hover:bg-red-700"
+              onClick={handleLoginRequest}
             >
               Sign In
             </button>
