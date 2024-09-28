@@ -1,34 +1,34 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="w-full bg-black py-6 text-gray-400 text-sm">
       <p className="mb-4 text-center">
         Questions? Call{" "}
-        <a href="tel:000-000-0000" className="hover:underline">
+        <Link to="tel:000-000-0000" className="hover:underline">
           000-000-0000
-        </a>
+        </Link>
       </p>
       <ul className="flex justify-center space-x-4">
         <li>
-          <a href="#" className="hover:underline">
+          <Link to="/" className="hover:underline">
             FAQ
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#" className="hover:underline">
+          <Link to="/" className="hover:underline">
             Help Center
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#" className="hover:underline">
+          <Link to="#" className="hover:underline">
             Terms of Use
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#" className="hover:underline">
+          <Link to="#" className="hover:underline">
             Privacy
-          </a>
+          </Link>
         </li>
       </ul>
     </footer>

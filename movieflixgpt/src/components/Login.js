@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Notification from "./Notification";
 
 const Login = () => {
@@ -11,6 +11,7 @@ const Login = () => {
   const [isNotification, setIsNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
 
+  const navigate = useNavigate();
   const handleLoginRequest = async (e) => {
     e.preventDefault();
 
@@ -33,8 +34,8 @@ const Login = () => {
       } else {
         setUserEmail("");
         setUserPassword("");
-        setIsNotification(true);
         setNotificationMessage(validateUser.data.message);
+        navigate("/browse");
       }
     } catch (error) {
       console.log("Error :", error);
@@ -105,9 +106,9 @@ const Login = () => {
                 Remember me
               </label>
             </div>
-            <a href="#" className="text-sm text-gray-400 hover:underline">
+            <Link to="/" className="text-sm text-gray-400 hover:underline">
               Need help?
-            </a>
+            </Link>
           </div>
 
           {/* Sign up link */}
@@ -126,10 +127,10 @@ const Login = () => {
             <p>
               This page is protected by Google reCAPTCHA to ensure you're not a
               bot.
-              <a href="#" className="text-blue-500 hover:underline">
+              <Link to="/" className="text-blue-500 hover:underline">
                 {" "}
                 Learn more
-              </a>
+              </Link>
               .
             </p>
           </div>

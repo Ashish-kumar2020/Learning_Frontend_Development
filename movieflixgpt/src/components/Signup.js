@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Footer from "./Footer";
 import Notification from "./Notification";
@@ -10,6 +11,8 @@ const Signup = () => {
   const [userPassword, setUserPassword] = useState("");
   const [isNotification, setIsNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
+
+  const navigate = useNavigate();
   const handleSignUpRequest = async (e) => {
     e.preventDefault();
     console.log("User Name :", userName);
@@ -34,7 +37,7 @@ const Signup = () => {
         setUserName("");
         setUserEmail("");
         setUserPassword("");
-        setIsNotification(true);
+        navigate("/");
       }
     } catch (e) {
       console.log("Error in catch : ", e);
@@ -118,9 +121,9 @@ const Signup = () => {
                 Remember me
               </label>
             </div>
-            <a href="#" className="text-sm text-gray-400 hover:underline">
+            <Link to="#" className="text-sm text-gray-400 hover:underline">
               Need help?
-            </a>
+            </Link>
           </div>
 
           {/* Sign up link */}
@@ -138,10 +141,10 @@ const Signup = () => {
             <p>
               This page is protected by Google reCAPTCHA to ensure you're not a
               bot.
-              <a href="#" className="text-blue-500 hover:underline">
+              <Link to="/" className="text-blue-500 hover:underline">
                 {" "}
                 Learn more
-              </a>
+              </Link>
               .
             </p>
           </div>
