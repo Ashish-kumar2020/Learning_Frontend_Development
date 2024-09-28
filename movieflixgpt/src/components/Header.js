@@ -2,13 +2,13 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="absolute w-[100%] px-[9rem] py-2.5 bg-gradient-to-b from-black">
+    <header className="w-full p-4">
       <img
-        className="w-44"
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-        alt="company logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+        alt="Netflix Logo"
+        className="w-28"
       />
-    </div>
+    </header>
   );
 };
 
